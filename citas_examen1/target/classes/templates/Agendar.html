@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="..static/CSS/estilos.css" th:href="@{/CSS/estilos.css}" rel="stylesheet"/>
+    <title>Agendar Cita</title>
+</head>
+<body>
+    <header>
+        <img id="banner" src="/imagen/banner.jpg">
+    </header>
+    <section id="datos">
+        <a href="/agendar">Inicio</a>
+        <a href="/consultar">Agendar cita</a>
+        <ol>
+            <li
+                    th:each="fila: ${lista}"
+                    th:text="${fila}">
+            </li>
+        </ol>
+        <form   action="/add" method="post">
+        <h1>Agendar Cita Medica</h1>
+        <p>Paciente: <input type="text" name="asunto"> </p>
+        <p>Asunto:</p><textarea type="text" name="asunto" class="form-input" placeholder="Escriba el asunto" cols="40"></textarea>
+        <p>Hora: <input type="time" name="asunto" value="12:00:00" max="20:00:00" min="10:00:00" step="1"></p>
+        <p>Fecha: <input type="date" name="asunto"></p>
+        <p>Medico:
+            <select name="asunto">
+            <option selected value="1">...</option>
+            <option value="Andres Suarez">Andres Suarez</option>
+            <option value="Jorge Urrieta">Jorge Urrieta</option>
+            <option value="Maria Sanchez">Maria Sanchez</option>
+            <option value="Fernando Delgadillo">Fernando Delgadillo</option>
+            <option value="Regina Portela">Regina Portela</option>
+            </select>
+        </p>
+        <input type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+</html>

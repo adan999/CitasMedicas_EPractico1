@@ -1,0 +1,14 @@
+body{
+    background-color: yellowgreen;
+    margin: 0px;
+    padding: 0px;
+}
+#banner {
+    width: 100%;
+    display: block;
+    height: 150px;
+    margin: auto;
+}
+#datos{
+    text-align: center;
+}
